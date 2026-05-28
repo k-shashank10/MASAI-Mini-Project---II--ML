@@ -1,0 +1,40 @@
+# Telecom Customer Churn Prediction
+
+## Project Overview
+A telecom company wants to identify customers who are likely to cancel their subscription before it happens.  
+This project builds a **machine learning pipeline** to predict customer churn using a dataset collected from multiple regional offices.  
+The raw dataset is messy, so extensive **data cleaning, preprocessing, and exploration** are performed before modeling.
+
+---
+
+## Dataset
+- **Source**: `churnguard_data.csv`
+- **Description**: Customer subscription records including demographics, service details, billing information, and churn status.
+- **Target Variable**: `Churn` (Yes → 1, No → 0)
+
+---
+
+## Workflow
+1. **Data Cleaning**
+   - Drop irrelevant columns (e.g., `customerID`)
+   - Remove duplicates
+   - Handle missing values
+   - Fix typos and inconsistent categorical entries
+   - Convert numeric columns properly
+   - Apply realistic filters (e.g., tenure > 0, MonthlyCharges between 10–200)
+
+2. **Feature Engineering**
+   - Encode target column (`Churn`)
+   - One-hot encode categorical features (`gender`, `PhoneService`, `InternetService`, `Contract`, `PaperlessBilling`, `PaymentMethod`)
+
+3. **Model Training**
+   - Split data into train (80%) and test (20%)
+   - Train a **Logistic Regression** model (`max_iter=1000`)
+   - Evaluate with accuracy and classification report
+
+4. **Evaluation Metrics**
+   - Accuracy Score
+   - Precision, Recall, F1-score (via `classification_report`)
+   - Confusion Matrix (optional visualization)
+
+
